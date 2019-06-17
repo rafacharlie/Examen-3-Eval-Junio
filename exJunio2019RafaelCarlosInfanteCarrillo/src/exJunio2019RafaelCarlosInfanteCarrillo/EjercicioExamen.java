@@ -186,7 +186,7 @@ public class EjercicioExamen {
             if (linea != null) {
               
               resultado += linea + "\n"; // escribe linea a linea en esta variable
-              if(linea.contains("//") || linea.contains("/*")) {
+              if(linea.contains("//") || linea.contains("/*") || linea.contains("*/")) {
                 linea="";
               }else {
                 resultado_1 += linea + "\n"; // escribe linea a linea en esta variable
