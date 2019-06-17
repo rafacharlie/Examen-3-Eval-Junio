@@ -69,6 +69,7 @@ public class EjercicioExamen {
       String lineaTitulo;
       lineaTitulo = tituloEscribir.readLine();
       frame.setTitle(lineaTitulo);
+      tituloEscribir.close();
     } catch (IOException ex) {
       JOptionPane.showMessageDialog(null,"No se encontro el fichero con el titulo");
     }
