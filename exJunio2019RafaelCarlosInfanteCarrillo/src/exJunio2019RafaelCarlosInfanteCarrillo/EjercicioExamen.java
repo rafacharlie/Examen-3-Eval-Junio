@@ -48,11 +48,11 @@ public class EjercicioExamen {
     }
 
     if (args.length == 1) {
-      guardaArgumentos(args[0], true);
+      guardaArgumentos(args[0], 1);
     }
     if (args.length == 2) {
-      guardaArgumentos(args[0], true);
-      guardaArgumentos(args[1], false);
+      guardaArgumentos(args[0], 1);
+      guardaArgumentos(args[1], 2);
     }
 
     EventQueue.invokeLater(new Runnable() {
@@ -69,13 +69,13 @@ public class EjercicioExamen {
 
   // codigo
   /**
-   * almacena los parametros introducidos por linea de comandos.
+   * almacena los parametros introducidos por linea de comandos segun el numero.
    * 
    * @param argumento
    * @param b
    */
-  private static void guardaArgumentos(String argumento, boolean b) {
-    if (b) {
+  private static void guardaArgumentos(String argumento, int numero) {
+    if (numero == 1) {
       argumento1 = argumento;
     } else {
       argumento2 = argumento;
@@ -129,7 +129,7 @@ public class EjercicioExamen {
     // codigo
     textField.setText(argumento1);
     if (argumento1 != "") {
-
+      // leemos el argumento1 de manera que no halla fallo alguno
       try {
         BufferedReader argument1 = new BufferedReader(new FileReader(argumento1));
         argument1.close();
@@ -153,7 +153,7 @@ public class EjercicioExamen {
     textField_1.setText(argumento2);
 
     if (argumento2 != "") {
-
+      // leemos el argumento2 de manera que no halla fallo alguno
       try {
         BufferedReader argument2 = new BufferedReader(new FileReader(argumento2));
         argument2.close();
@@ -259,6 +259,7 @@ public class EjercicioExamen {
     JButton btnNewButton_2 = new JButton("Quitar comentarios");
     btnNewButton_2.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
+
         // mi codigo de programa
 
         try {
@@ -271,7 +272,7 @@ public class EjercicioExamen {
           String linea = "";
           String resultado = "";
           String resultado_1 = "";
-          boolean comprueba = false; // con este el de bloque y el javaDoc
+          boolean comprueba = false; // con este comprobamos el comentario de bloque y el javaDoc
           boolean cLinea = false; // con este comprobamos el comentario de linea
 
           while (linea != null) {
@@ -303,15 +304,16 @@ public class EjercicioExamen {
                   resultado_1 += linea + "\n"; // escribe linea a linea en esta variable
                   bw.write(linea); // escribe en el fichero
                   bw.newLine(); // hace un salto de linea a la hora de escribir en el fichero
-                } else {
-                  linea = "";
-                }
+                } /*
+                   * else { linea = ""; }
+                   */
               }
 
             }
+
           }
 
-          textArea.append(resultado); 
+          textArea.append(resultado);
           textArea_1.append(resultado_1);
 
           br.close();
