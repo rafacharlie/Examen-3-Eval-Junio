@@ -33,8 +33,8 @@ public class EjercicioExamen {
   protected File ficheroDestino; // variable
   protected JTextArea textArea;
 
-  static String argumento1 = ""; // variable
-  static String argumento2 = ""; // variable
+  static String argumento1 = ""; // variable donde almaceno la ruta del primer argumento
+  static String argumento2 = ""; // variable donde almaceno la ruta del segundo argumento
 
   /**
    * Launch the application.
@@ -148,10 +148,10 @@ public class EjercicioExamen {
     textField_1.setBounds(10, 98, 385, 20);
     frame.getContentPane().add(textField_1);
     textField_1.setColumns(10);
-    
+
     // codigo
     textField_1.setText(argumento2);
-    
+
     if (argumento2 != "") {
 
       try {
@@ -271,8 +271,8 @@ public class EjercicioExamen {
           String linea = "";
           String resultado = "";
           String resultado_1 = "";
-          boolean comprueba = false;
-          boolean cLinea = false;
+          boolean comprueba = false; // con este el de bloque y el javaDoc
+          boolean cLinea = false; // con este comprobamos el comentario de linea
 
           while (linea != null) {
             linea = br.readLine();
@@ -299,7 +299,7 @@ public class EjercicioExamen {
                 comprueba = false;
 
               } else {
-                if (cLinea != false && comprueba == false ) {
+                if (cLinea != false && comprueba == false) {
                   resultado_1 += linea + "\n"; // escribe linea a linea en esta variable
                   bw.write(linea); // escribe en el fichero
                   bw.newLine(); // hace un salto de linea a la hora de escribir en el fichero
@@ -311,7 +311,7 @@ public class EjercicioExamen {
             }
           }
 
-          textArea.append(resultado);
+          textArea.append(resultado); 
           textArea_1.append(resultado_1);
 
           br.close();
